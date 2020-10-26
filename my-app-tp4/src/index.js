@@ -21,9 +21,12 @@ class Post extends React.Component {
     for(let i=0; i<this.props.value.length;i++) 
     tab.push(
       <div>
-        {this.props.value[i].contenu}
-        <button key = {i} onClick = {() => this.getLike(i)}>C'est super</button>
-        <span id={"postContainer"+i}>{this.props.value[i].like}</span>
+        <div class="fond">
+          {this.props.value[i].contenu} <br/>
+          <button key = {i} onClick = {() => this.getLike(i)}>C'est super</button>&nbsp;
+          <span id={"postContainer"+i}>{this.props.value[i].like}</span>
+        </div>
+        <br/>
       </div>
     );
     return (<div>{tab}</div>);
@@ -31,7 +34,7 @@ class Post extends React.Component {
 
 	render() {
 		return (
-      <div>
+      <div class="centre">
         {this.display_profils_posts()}
       </div>
 		);
@@ -62,7 +65,7 @@ class Profil extends React.Component {
         Nom : {this.props.value.surname} <br/><br/>
         Date de naissance : {this.props.value.date} <br/>
       </div>
-      <div class="droite droite-bis"><button onClick ={() => this.getColor()}>Change Style</button></div>
+      <div class="droite droite-bis"><button onClick ={() => this.getColor()}>Change Style</button></div><br/>
       </div>
     );
   }
