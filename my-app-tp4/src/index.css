@@ -1,0 +1,17 @@
+.droite{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+.droite-bis{
+	margin-right: 5em;
+}
+
+.centre{
+		display: flex;
+        justify-content: center;
+}
+
+h1 {
+	color: #3b5998;
+}

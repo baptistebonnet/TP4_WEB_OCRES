@@ -54,9 +54,15 @@ class Profil extends React.Component {
   render() {
     return (
       <div id="profilContainer" style={{ backgroundColor: this.props.value.color }}>
-      {this.props.value.surname} <br/>
-      <img src = {this.props.value.picture} height = "200" width = "200"></img>
-      <button onClick ={() => this.getColor()}>Change Style</button>
+      <div class="centre">
+        <img src = {this.props.value.picture} height = "200" width = "200"></img><br/>
+      </div>
+      <div class="centre">
+        Prénom : {this.props.value.firstname} &nbsp;
+        Nom : {this.props.value.surname} <br/><br/>
+        Date de naissance : {this.props.value.date} <br/>
+      </div>
+      <div class="droite droite-bis"><button onClick ={() => this.getColor()}>Change Style</button></div>
       </div>
     );
   }
@@ -75,7 +81,7 @@ class Page extends React.Component {
                 date : "01/05/1999",
                 picture : "bob.png",
                 color : 'Yellow',
-                posts : [{contenu : "J'adore les chips",like : 0},{contenu : "J'adore les petites filles, trop mimi",like : 0},{contenu : "Hier soir, je suis parti au parc astérix Trop le fun",like : 0}]
+                posts : [{contenu : "Superbe journée avec @Patrick",like : 0},{contenu : "Beaucoup de monde aujourd'hui au Crabe Croustillant",like : 0},{contenu : "Programme du jour : pêche à la méduse",like : 0}]
             },
             {
                 firstname : "Martine",
@@ -83,7 +89,7 @@ class Page extends React.Component {
                 date : "25/07/1954",
                 picture : "martine.png",
                 color : 'Blue',
-                posts : [{contenu : "Bonsoir tt le monde",like : 0},{contenu : "Je rejoins facebook version wish",like : 0},{contenu : "Trop bien",like : 0}]
+                posts : [{contenu : "Martine au parc",like : 0},{contenu : "Martine fait du théâtre",like : 0},{contenu : "Martine ne respecte pas le couvre feu",like : 0}]
             },
             {
                 firstname : "Camille",
@@ -91,7 +97,7 @@ class Page extends React.Component {
                 date : "01/03/1994",
                 picture : "camille.png",
                 color : 'Green',
-                posts : [{contenu : "Je suis trop beau",like : 0},{contenu : "Je suis à dalas",like : 0},{contenu : "Les chiens c'est cool",like : 0}]
+                posts : [{contenu : "Je grignote, avec mes sœurs, des feuilles croquantes du matin au soir",like : 0},{contenu : "Je rêve de m'envoler",like : 0},{contenu : "J'ai croisé des drôles de petites bêtes",like : 0}]
             }
           ],
       currentProfil : 0
@@ -118,10 +124,9 @@ class Page extends React.Component {
   render() {
     return (
       <div>
-        <p>Coucou
-        </p>
+        <h1 class="centre">Fakebook</h1>
 
-        {this.display_profils_button()}
+        <div class ="droite">{this.display_profils_button()}</div>
 
         <Profil value = {this.state.profils[this.state.currentProfil]} />
         <Post value = {this.state.profils[this.state.currentProfil].posts} />
